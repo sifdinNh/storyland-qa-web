@@ -49,7 +49,7 @@ const PrivacySection = () => {
         />
         <PolicySection
           title="Your Rights"
-          content="You can request access, correction, or deletion of your account and personal data by contacting our support team at [support@storylandapp.com]. We will respond to your request promptly within 30 days."
+          content="You can request access, correction, or deletion of your account and personal data by contacting our support team at [support@storylandapp.ai]. We will respond to your request promptly within 30 days."
         />
         <PolicySection
           title="Data Retention"
@@ -61,7 +61,7 @@ const PrivacySection = () => {
         />
         <PolicySection
           title="Privacy Policy Updates"
-          content="We may update this Privacy Policy from time to time. The most current version is always available at [www.storylandapp.com/privacy]."
+          content="We may update this Privacy Policy from time to time. The most current version is always available at [www.storylandapp.ai/privacy]."
         />
         <div className="w-full text-lg font-normal mt-4">
           <div className="text-gray-900 max-md:max-w-full">
