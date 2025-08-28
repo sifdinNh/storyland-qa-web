@@ -51,10 +51,11 @@ const ASSETLINKS_RESPONSE = [
 function aasaMiddlewarePlugin() {
   const handler = (req: any, res: any, next: any) => {
     if (req.url === "/.well-known/apple-app-site-association") {
-      res.statusCode = 200;
-      res.setHeader("Content-Type", "application/json");
-      res.setHeader("Access-Control-Allow-Origin", "*");
-      res.setHeader("Content-Disposition", "inline");
+      res.writeHead(200, {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        "Cache-Control": "no-cache"
+      });
       res.end(JSON.stringify(AASA_RESPONSE));
       return;
     }
