@@ -5,6 +5,7 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 import type { IncomingMessage, ServerResponse } from "http";
 import type { ViteDevServer } from "vite";
+import fs from "fs";
 
 const securityHeaders = [
   {
@@ -44,9 +45,20 @@ export default defineConfig(({ mode }) => ({
         res.setHeader(key, value);
       });
 
-      // Set Content-Type for apple-app-site-association
+      // Serve apple-app-site-association as JSON
       if (req.url === "/.well-known/apple-app-site-association") {
         res.setHeader("Content-Type", "application/json");
+        try {
+          const filePath = path.join(__dirname, "public/.well-known/apple-app-site-association");
+          const content = fs.readFileSync(filePath, "utf-8");
+          res.end(content);
+          return;
+        } catch (error) {
+          console.error("Error serving apple-app-site-association:", error);
+          res.statusCode = 404;
+          res.end("File not found");
+          return;
+        }
       }
       
       next();
