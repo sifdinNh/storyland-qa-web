@@ -16,6 +16,26 @@ export default defineConfig(({ mode }) => ({
       (req: IncomingMessage, res: ServerResponse, next: () => void) => {
         if (req.url === '/.well-known/apple-app-site-association') {
           res.setHeader('Content-Type', 'application/json');
+          res.end(JSON.stringify({
+            "applinks": {
+              "apps": [],
+              "details": [
+                {
+                  "appID": "9KQPGL866P.com.storylandapp.storyland.development",
+                  "paths": ["/auth","/*"]
+                },
+                {
+                  "appID": "9KQPGL866P.com.storylandapp.storyland.staging",
+                  "paths": ["/auth","/*"]
+                },
+                {
+                  "appID": "9KQPGL866P.com.storylandapp.storyland",
+                  "paths": ["/auth", "/*"]
+                }
+              ]
+            }
+          }));
+          return;
         }
         next();
       }
