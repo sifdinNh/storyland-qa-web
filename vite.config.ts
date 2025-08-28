@@ -1,10 +1,52 @@
+// vite.config.ts
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
-import type { IncomingMessage, ServerResponse } from "http";
 
-// https://vitejs.dev/config/
+const AASA_RESPONSE = {
+  applinks: {
+    apps: [],
+    details: [
+      {
+        appID: "9KQPGL866P.com.storylandapp.storyland.development",
+        paths: ["/auth", "/*"],
+      },
+      {
+        appID: "9KQPGL866P.com.storylandapp.storyland.staging",
+        paths: ["/auth", "/*"],
+      },
+      {
+        appID: "9KQPGL866P.com.storylandapp.storyland",
+        paths: ["/auth", "/*"],
+      },
+    ],
+  },
+};
+
+function aasaPlugin() {
+  const handler = (req: any, res: any, next: any) => {
+    if (req.url === "/.well-known/apple-app-site-association") {
+      res.statusCode = 200;
+      res.setHeader("Content-Type", "application/json; charset=utf-8");
+      res.setHeader("Access-Control-Allow-Origin", "*");
+      res.end(JSON.stringify(AASA_RESPONSE));
+      return;
+    }
+    next();
+  };
+
+  return {
+    name: "aasa-endpoint",
+    configureServer(server: any) {
+      server.middlewares.use(handler);
+    },
+    configurePreviewServer(server: any) {
+      server.middlewares.use(handler);
+    },
+  };
+}
+
 export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
@@ -12,43 +54,11 @@ export default defineConfig(({ mode }) => ({
     headers: {
       "Access-Control-Allow-Origin": "*",
     },
-    middlewares: [
-      (req: IncomingMessage, res: ServerResponse, next: () => void) => {
-        if (req.url === '/.well-known/apple-app-site-association') {
-          res.writeHead(200, {
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': '*'
-          });
-          const response = {
-            "applinks": {
-              "apps": [],
-              "details": [
-                {
-                  "appID": "9KQPGL866P.com.storylandapp.storyland.development",
-                  "paths": ["/auth","/*"]
-                },
-                {
-                  "appID": "9KQPGL866P.com.storylandapp.storyland.staging",
-                  "paths": ["/auth","/*"]
-                },
-                {
-                  "appID": "9KQPGL866P.com.storylandapp.storyland",
-                  "paths": ["/auth", "/*"]
-                }
-              ]
-            }
-          };
-          res.end(JSON.stringify(response));
-          return;
-        }
-        next();
-      }
-    ],
   },
   plugins: [
     react(),
-    mode === 'development' &&
-    componentTagger(),
+    mode === "development" && componentTagger(),
+    aasaPlugin(),
   ].filter(Boolean),
   resolve: {
     alias: {
