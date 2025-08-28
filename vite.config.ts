@@ -15,8 +15,11 @@ export default defineConfig(({ mode }) => ({
     middlewares: [
       (req: IncomingMessage, res: ServerResponse, next: () => void) => {
         if (req.url === '/.well-known/apple-app-site-association') {
-          res.setHeader('Content-Type', 'application/json');
-          res.end(JSON.stringify({
+          res.writeHead(200, {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*'
+          });
+          const response = {
             "applinks": {
               "apps": [],
               "details": [
@@ -34,7 +37,8 @@ export default defineConfig(({ mode }) => ({
                 }
               ]
             }
-          }));
+          };
+          res.end(JSON.stringify(response));
           return;
         }
         next();
