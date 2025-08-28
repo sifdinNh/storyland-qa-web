@@ -54,6 +54,7 @@ function aasaMiddlewarePlugin() {
       res.writeHead(200, {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
+        'Content-Disposition': 'inline',
         "Cache-Control": "no-cache"
       });
       res.end(JSON.stringify(AASA_RESPONSE));
