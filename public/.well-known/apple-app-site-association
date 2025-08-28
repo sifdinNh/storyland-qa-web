@@ -1,0 +1,19 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "9KQPGL866P.com.storylandapp.storyland.development",
+        "paths": ["/auth","/*"]
+      },
+      {
+        "appID": "9KQPGL866P.com.storylandapp.storyland.staging",
+        "paths": ["/auth","/*"]
+      },
+      {
+        "appID": "9KQPGL866P.com.storylandapp.storyland",
+        "paths": ["/auth", "/*"]
+      }
+    ]
+  }
+}
