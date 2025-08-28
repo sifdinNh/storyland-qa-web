@@ -24,7 +24,7 @@ const AASA_RESPONSE = {
   },
 };
 
-function aasaPlugin() {
+function aasaMiddlewarePlugin() {
   const handler = (req: any, res: any, next: any) => {
     if (req.url === "/.well-known/apple-app-site-association") {
       res.statusCode = 200;
@@ -37,7 +37,7 @@ function aasaPlugin() {
   };
 
   return {
-    name: "aasa-endpoint",
+    name: "vite-aasa-middleware",
     configureServer(server: any) {
       server.middlewares.use(handler);
     },
@@ -58,7 +58,7 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
     mode === "development" && componentTagger(),
-    aasaPlugin(),
+    aasaMiddlewarePlugin(),
   ].filter(Boolean),
   resolve: {
     alias: {
