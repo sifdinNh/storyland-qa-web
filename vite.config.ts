@@ -2,12 +2,24 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
+import type { IncomingMessage, ServerResponse } from "http";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+    },
+    middlewares: [
+      (req: IncomingMessage, res: ServerResponse, next: () => void) => {
+        if (req.url === '/.well-known/apple-app-site-association') {
+          res.setHeader('Content-Type', 'application/json');
+        }
+        next();
+      }
+    ],
   },
   plugins: [
     react(),
