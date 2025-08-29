@@ -1,20 +1,18 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
-import HeroSection from '../components/HeroSection';
-import FeaturesSection from '../components/FeaturesSection';
+import TermsSection from '../components/TermsSection';
 import Footer from '../components/Footer';
 
-const Index = () => {
+const Terms = () => {
   return (
     <div className="items-stretch flex flex-col bg-[#FBF4F5]">
       <Navbar />
       <main>
-        <HeroSection />
-        <FeaturesSection />
+        <TermsSection />
       </main>
       <Footer />
     </div>
   );
 };
 
-export default Index;
+export default Terms;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -8,12 +9,12 @@ const Footer = () => {
           © 2025 Storyland
         </div>
         <nav className="flex min-w-60 items-center gap-5 text-base font-normal justify-center h-full">
-          <div className="self-stretch my-auto">
+          <Link to="/privacy" className="self-stretch my-auto hover:text-[#012468] transition-colors">
             Privacy Policy 
-          </div>
-          <div className="self-stretch my-auto">
+          </Link>
+          <Link to="/terms" className="self-stretch my-auto hover:text-[#012468] transition-colors">
             Terms & Conditions
-          </div>
+          </Link>
         </nav>
       </div>
       <address className="text-base font-normal self-stretch my-auto max-md:max-w-full not-italic">

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
@@ -13,21 +14,21 @@ const Navbar = () => {
         </div>
         <nav className="flex items-center gap-3 overflow-hidden text-sm font-semibold flex-wrap max-md:max-w-full">
           <div className="self-stretch flex min-w-60 items-center gap-2 overflow-hidden text-gray-900 leading-none my-auto">
-            <div className="self-stretch flex items-center gap-1 whitespace-nowrap my-auto px-2 py-1">
+            <Link to="/" className="self-stretch flex items-center gap-1 whitespace-nowrap my-auto px-2 py-1 hover:bg-gray-100 rounded transition-colors">
               <div className="text-gray-900 self-stretch my-auto">
                 Home
               </div>
-            </div>
-            <div className="self-stretch flex items-center gap-1 my-auto px-2 py-1">
+            </Link>
+            <Link to="/privacy" className="self-stretch flex items-center gap-1 my-auto px-2 py-1 hover:bg-gray-100 rounded transition-colors">
               <div className="text-gray-900 self-stretch my-auto">
                 Privacy Policy
               </div>
-            </div>
-            <div className="self-stretch flex items-center gap-1 my-auto px-2 py-1">
+            </Link>
+            <Link to="/terms" className="self-stretch flex items-center gap-1 my-auto px-2 py-1 hover:bg-gray-100 rounded transition-colors">
               <div className="text-gray-900 self-stretch my-auto">
                 Terms & Conditions
               </div>
-            </div>
+            </Link>
           </div>
           <button className="justify-center items-center self-stretch flex gap-2 text-white leading-none w-[162px] bg-[#012468] my-auto px-5 py-[13px] rounded-[57.798px] hover:bg-[#013a7a] transition-colors">
             <div className="self-stretch my-auto">
