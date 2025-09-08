@@ -29,6 +29,11 @@ const Navbar = () => {
                 Terms & Conditions
               </div>
             </Link>
+            <Link to="/support" className="self-stretch flex items-center gap-1 my-auto px-2 py-1 hover:bg-gray-100 rounded transition-colors">
+              <div className="text-gray-900 self-stretch my-auto">
+                Support
+              </div>
+            </Link>
           </div>
           <button className="justify-center items-center self-stretch flex gap-2 text-white leading-none w-[162px] bg-[#012468] my-auto px-5 py-[13px] rounded-[57.798px] hover:bg-[#013a7a] transition-colors">
             <div className="self-stretch my-auto">
