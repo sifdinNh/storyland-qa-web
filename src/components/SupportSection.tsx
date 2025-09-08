@@ -4,7 +4,6 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
 import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
 
@@ -12,7 +11,6 @@ interface SupportFormData {
   name: string;
   email: string;
   subject: string;
-  category: string;
   message: string;
 }
 
@@ -21,7 +19,6 @@ const SupportSection = () => {
     name: '',
     email: '',
     subject: '',
-    category: '',
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -37,7 +34,7 @@ const SupportSection = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.name || !formData.email || !formData.subject || !formData.category || !formData.message) {
+    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
       toast({
         title: "Error",
         description: "Please fill in all required fields.",
@@ -49,7 +46,7 @@ const SupportSection = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('https://qa-api.storylandapp.ai/apis/support', {
+      const response = await fetch('https://qa-api.storylandapp.ai/apis/user/support/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -57,10 +54,11 @@ const SupportSection = () => {
         body: JSON.stringify(formData),
       });
 
-      if (response.ok) {
+      if (response.status === 201) {
+        const result = await response.json();
         toast({
           title: "Success!",
-          description: "Your message has been sent successfully. We'll get back to you soon!",
+          description: result.message || "Thank you for contacting support. We'll get back to you soon.",
         });
         
         // Reset form
@@ -68,7 +66,6 @@ const SupportSection = () => {
           name: '',
           email: '',
           subject: '',
-          category: '',
           message: ''
         });
       } else {
@@ -98,7 +95,7 @@ const SupportSection = () => {
 
       <div className="grid lg:grid-cols-3 gap-8">
         {/* Contact Information */}
-        <div className="lg:col-span-1">
+        <div className="lg:col-span-1 order-2 lg:order-1">
           <div className="space-y-6">
             <Card>
               <CardHeader>
@@ -166,7 +163,7 @@ const SupportSection = () => {
         </div>
 
         {/* Contact Form */}
-        <div className="lg:col-span-2">
+        <div className="lg:col-span-2 order-1 lg:order-2">
           <Card>
             <CardHeader>
               <CardTitle>Send us a Message</CardTitle>
@@ -199,24 +196,6 @@ const SupportSection = () => {
                       required
                     />
                   </div>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="category">Category *</Label>
-                  <Select value={formData.category} onValueChange={(value) => handleInputChange('category', value)}>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select a category" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="general">General Inquiry</SelectItem>
-                      <SelectItem value="technical">Technical Issue</SelectItem>
-                      <SelectItem value="feature">Feature Request</SelectItem>
-                      <SelectItem value="bug">Bug Report</SelectItem>
-                      <SelectItem value="account">Account Support</SelectItem>
-                      <SelectItem value="partnership">Partnership</SelectItem>
-                      <SelectItem value="other">Other</SelectItem>
-                    </SelectContent>
-                  </Select>
                 </div>
 
                 <div className="space-y-2">
