@@ -1,3 +1,42 @@
+/* Local font definitions */
+@font-face {
+  font-family: 'Omnes';
+  src: url('/fonts/Omnes-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Omnes';
+  src: url('/fonts/Omnes-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Omnes';
+  src: url('/fonts/Omnes-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Omnes';
+  src: url('/fonts/Omnes-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter.ttf') format('truetype');
+  font-weight: 300 900;
+  font-style: normal;
+}
+
+/* Import external fonts for Plus Jakarta Sans, Nunito, and Space Grotesk */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

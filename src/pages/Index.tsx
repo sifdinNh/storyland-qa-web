@@ -1,20 +1,7 @@
-import React from 'react';
-import Navbar from '../components/Navbar';
-import HeroSection from '../components/HeroSection';
-import FeaturesSection from '../components/FeaturesSection';
-import Footer from '../components/Footer';
+import LandingPage from '../components/LandingPage';
 
 const Index = () => {
-  return (
-    <div className="items-stretch flex flex-col bg-[#FBF4F5]">
-      <Navbar />
-      <main>
-        <HeroSection />
-        <FeaturesSection />
-      </main>
-      <Footer />
-    </div>
-  );
+  return <LandingPage />;
 };
 
 export default Index;

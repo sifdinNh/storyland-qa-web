@@ -18,6 +18,13 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'omnes': ['Omnes', 'system-ui', 'sans-serif'],
+				'inter': ['Inter', 'system-ui', 'sans-serif'],
+				'plus-jakarta': ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+				'nunito': ['Nunito', 'system-ui', 'sans-serif'],
+				'space-grotesk': ['Space Grotesk', 'system-ui', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
