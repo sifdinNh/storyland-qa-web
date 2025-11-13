@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import PrivacySection from '../components/PrivacySection';
-import Footer from '../components/Footer';
+import { Footer } from '../components/Footer';
 
 const Privacy = () => {
   return (

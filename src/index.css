@@ -1,3 +1,6 @@
+/* Import external fonts for Plus Jakarta Sans, Nunito, and Space Grotesk */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
 /* Local font definitions */
 @font-face {
   font-family: 'Omnes';
@@ -33,9 +36,6 @@
   font-weight: 300 900;
   font-style: normal;
 }
-
-/* Import external fonts for Plus Jakarta Sans, Nunito, and Space Grotesk */
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;

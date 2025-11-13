@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { DownloadIcon } from './icons/DownloadIcon';
 
 export const Navigation: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -45,10 +46,7 @@ export const Navigation: React.FC = () => {
 
             {/* Get the App Button */}
             <button className="h-11 px-6 py-4 bg-black rounded-[70px] flex items-center gap-2.5 hover:bg-gray-800 transition-colors">
-              <div className="w-6 h-6 relative overflow-hidden">
-                <div className="w-4 h-4 absolute left-[3.75px] top-[3px] bg-white opacity-20" />
-                <div className="w-4 h-4 absolute left-[3px] top-[2.25px] bg-white" />
-              </div>
+              <DownloadIcon width={20} height={20} />
               <span className="text-white text-base font-semibold font-plus-jakarta leading-5">
                 Get the App
               </span>
@@ -93,10 +91,7 @@ export const Navigation: React.FC = () => {
                 Plans
               </a>
               <button className="w-full bg-black text-white py-3 rounded-[70px] hover:bg-gray-800 transition-colors flex items-center justify-center gap-2.5">
-                <div className="w-5 h-5 relative">
-                  <div className="w-4 h-4 absolute left-[2px] top-[2px] bg-white opacity-20" />
-                  <div className="w-4 h-4 absolute left-[1px] top-[1px] bg-white" />
-                </div>
+                <DownloadIcon width={20} height={20} />
                 <span className="font-semibold font-plus-jakarta">Get the App</span>
               </button>
             </div>

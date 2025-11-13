@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import TermsSection from '../components/TermsSection';
-import Footer from '../components/Footer';
+import { Footer } from '../components/Footer';
 
 const Terms = () => {
   return (

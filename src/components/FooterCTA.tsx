@@ -1,30 +1,21 @@
 import React from 'react';
+import { AppStoreIcon } from './icons/AppStoreIcon';
+import { GooglePlayIcon } from './icons/GooglePlayIcon';
 
 export const FooterCTA: React.FC = () => {
   return (
     <section className="py-16">
       <div className="max-w-[1440px] mx-auto px-5 lg:px-20">
         <div className="bg-rose-50 rounded-[50px] pb-16 pt-12 px-6 lg:px-20 relative overflow-hidden">
-          {/* Background Clouds */}
-          <div className="absolute inset-0 overflow-hidden opacity-30">
-            <img
-              src="/images/clouds.png"
-              alt="Clouds background"
-              className="w-full h-full object-cover"
-            />
-          </div>
-
           {/* Main Content */}
           <div className="relative z-10 flex flex-col items-center gap-7">
-            {/* Logo */}
+            {/* Clouds Image */}
             <div className="relative">
-              <div className="w-20 h-20 bg-gradient-to-l from-red-400 to-red-500 rounded-[20px] shadow-[0px_13px_34px_0px_rgba(34,132,182,0.70)] flex items-center justify-center">
-                <img
-                  src="/images/logo.png"
-                  alt="Storyland"
-                  className="w-full h-full object-cover rounded-[20px]"
-                />
-              </div>
+              <img
+                src="/images/clouds.png"
+                alt="Clouds"
+                className="w-[512px] h-auto object-contain"
+              />
             </div>
 
             {/* Text Content */}
@@ -40,25 +31,11 @@ export const FooterCTA: React.FC = () => {
             {/* App Store Buttons */}
             <div className="flex flex-col items-center gap-3">
               <div className="flex gap-3">
-                <a href="#" className="inline-flex">
-                  <img
-                    src="/images/app-store-badge.png"
-                    alt="Download on the App Store"
-                    className="h-11"
-                    onError={(e) => {
-                      e.currentTarget.src = 'https://placehold.co/135x40/000000/FFFFFF/png?text=App+Store';
-                    }}
-                  />
+                <a href="#" className="inline-flex hover:opacity-90 transition-opacity">
+                  <AppStoreIcon width={150} height={50} />
                 </a>
-                <a href="#" className="inline-flex">
-                  <img
-                    src="/images/google-play-badge.png"
-                    alt="Get it on Google Play"
-                    className="h-11"
-                    onError={(e) => {
-                      e.currentTarget.src = 'https://placehold.co/135x40/000000/FFFFFF/png?text=Google+Play';
-                    }}
-                  />
+                <a href="#" className="inline-flex hover:opacity-90 transition-opacity">
+                  <GooglePlayIcon width={168} height={50} />
                 </a>
               </div>
 

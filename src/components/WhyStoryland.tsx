@@ -3,15 +3,15 @@ import React from 'react';
 export const WhyStoryland: React.FC = () => {
   const painPoints = [
     {
-      emoji: '😐',
+      emoji: '👨',
       text: 'Tired Of Reading The Same Books Every Night?'
     },
     {
-      emoji: '👧',
+      emoji: '👩',
       text: "Can't Always Be There To Read To Your Kids?"
     },
     {
-      emoji: '😐',
+      emoji: '👴',
       text: 'Wish Grandma Or Grandpa Could Tell Them A Story?'
     }
   ];
@@ -45,13 +45,21 @@ export const WhyStoryland: React.FC = () => {
         </div>
 
         {/* Pain Points */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 text-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4">
           {painPoints.map((point, index) => (
             <div key={index} className="flex flex-col items-center">
-              <div className="text-4xl mb-4">{point.emoji}</div>
-              <p className="text-lg md:text-xl font-medium text-gray-900 leading-tight">
-                {point.text}
-              </p>
+              <div className="relative w-full pt-10 md:pt-12">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-20 md:w-24 md:h-24 bg-white rounded-full flex items-center justify-center z-10 shadow-sm">
+                  <span className="text-4xl md:text-5xl">{point.emoji}</span>
+                </div>
+                <div className="bg-gray-100 rounded-3xl p-6 md:p-8 pt-16 md:pt-20">
+                  <h3
+                    className="font-inter font-medium text-[18px] leading-[100%] tracking-normal text-center align-middle capitalize text-gray-900"
+                  >
+                    {point.text}
+                  </h3>
+                </div>
+              </div>
             </div>
           ))}
         </div>

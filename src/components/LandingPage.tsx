@@ -16,19 +16,10 @@ const LandingPage: React.FC = () => {
         <HeroSection />
       </div>
 
-      {/* Why Storyland Section */}
       <WhyStoryland />
-
-      {/* Features Section */}
       <FeaturesSection />
-
-      {/* Subscription Plans Section */}
       <SubscriptionPlansSection />
-
-      {/* Footer CTA Section */}
       <FooterCTA />
-
-      {/* Footer */}
       <Footer />
     </div>
   );
