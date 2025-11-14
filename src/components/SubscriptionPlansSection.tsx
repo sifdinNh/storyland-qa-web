@@ -107,11 +107,11 @@ export const SubscriptionPlansSection: React.FC = () => {
 
   return (
     <section id="plans" className="py-20 bg-white">
-      <div className="max-w-[1440px] mx-auto px-5 lg:px-28 flex flex-col justify-center items-center gap-14">
+      <div className="max-w-[1440px] mx-auto  lg:px-28 flex flex-col justify-center items-center">
         {/* Header */}
-        <div className="flex flex-col justify-center items-center gap-8">
+        <div className="mt-[60px] flex flex-col justify-center items-center gap-8">
           <div className="flex flex-col justify-center items-center gap-[5px]">
-            <div className="max-w-[611px] w-full text-center text-red-400 text-lg font-semibold font-omnes">
+            <div className="max-w-[611px] w-full text-center text-[#D45971] text-lg font-semibold font-omnes">
               Our Plans
             </div>
             <div className="max-w-[717px] w-full text-center text-black text-3xl md:text-4xl font-semibold font-omnes leading-10">
@@ -124,7 +124,7 @@ export const SubscriptionPlansSection: React.FC = () => {
         </div>
 
         {/* Pricing Toggle */}
-        <div className="flex flex-col justify-center items-center gap-6">
+        <div className="mt-4 flex flex-col justify-center items-center gap-3">
           <div className="inline-flex justify-center items-center gap-0 bg-white rounded-full outline outline-1 outline-offset-[-1px] outline-neutral-200 p-1">
             <button
               onClick={() => setPricingPeriod('yearly')}
@@ -155,17 +155,17 @@ export const SubscriptionPlansSection: React.FC = () => {
             </button>
           </div>
 
-          {/* Info Banner */}
-          <div className="max-w-3xl w-full px-6 py-3 bg-yellow-50 rounded-xl flex justify-center items-center gap-2">
-            <span className="text-2xl">💡</span>
-            <div className="text-gray-700 text-sm font-normal font-space-grotesk">
-              <span className="font-semibold">Pay on this page</span> and <span className="font-semibold">get instant access.</span> Just sign in after payment to start using the app.
-            </div>
+        </div>
+        {/* Info Banner */}
+        <div className="mt-4 max-w-[880px] w-full px-6 py-3 bg-yellow-50 rounded-xl flex justify-center items-center gap-2">
+          <span className="text-2xl">💡</span>
+          <div className="text-gray-700 text-sm font-normal font-space-grotesk">
+            <span className="font-semibold">Pay on this page</span> and <span className="font-semibold">get instant access.</span> Just sign in after payment to start using the app.
           </div>
         </div>
 
         {/* Pricing Cards */}
-        <div className="max-w-[880px] w-full flex flex-col md:flex-row justify-center items-stretch gap-3.5">
+        <div className="mt-4 max-w-[880px] w-full flex flex-col md:flex-row justify-center items-stretch gap-3.5">
           <PricingCard
             title="All-stars Plan"
             description="Perfect for families with multiple children"

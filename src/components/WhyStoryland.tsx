@@ -21,7 +21,7 @@ export const WhyStoryland: React.FC = () => {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-1 md:mb-2">
-          <p className="text-pink-500 text-lg md:text-xl font-medium">
+          <p className="text-[#D45971] text-lg md:text-xl font-medium">
             Why Storyland?
           </p>
         </div>
