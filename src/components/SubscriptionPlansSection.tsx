@@ -157,7 +157,7 @@ export const SubscriptionPlansSection: React.FC = () => {
 
         </div>
         {/* Info Banner */}
-        <div className="mt-4 max-w-[880px] w-full px-6 py-3 bg-yellow-50 rounded-xl flex justify-center items-center gap-2">
+        <div className="mt-4 max-w-[880px] w-full px-6 py-3 bg-yellow-50 rounded-xl flex  items-center gap-2">
           <span className="text-2xl">💡</span>
           <div className="text-gray-700 text-sm font-normal font-space-grotesk">
             <span className="font-semibold">Pay on this page</span> and <span className="font-semibold">get instant access.</span> Just sign in after payment to start using the app.
