@@ -73,7 +73,7 @@ export const FeaturesSection: React.FC = () => {
               className="w-[640px] h-auto object-contain"
             />
           </div>
-          <p className="text-red-400 text-lg font-semibold font-omnes mb-2">Our Features</p>
+          <p className="text-[#D45971] text-lg font-semibold font-omnes mb-2">Our Features</p>
           <h2 className="text-black text-4xl font-semibold font-omnes leading-tight mb-4">
             A Storytelling App That Brings<br />Families Closer
           </h2>
