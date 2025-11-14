@@ -106,18 +106,18 @@ export const SubscriptionPlansSection: React.FC = () => {
   const [pricingPeriod, setPricingPeriod] = useState<'monthly' | 'yearly'>('monthly');
 
   return (
-    <section id="plans" className="py-20 bg-white">
-      <div className="max-w-[1440px] mx-auto  lg:px-28 flex flex-col justify-center items-center">
+    <section id="plans" className="py-12 md:py-20 bg-white">
+      <div className="max-w-[1440px] mx-auto px-4 lg:px-28 flex flex-col justify-center items-center">
         {/* Header */}
-        <div className="mt-[60px] flex flex-col justify-center items-center gap-8">
+        <div className="mt-8 md:mt-[60px] flex flex-col justify-center items-center gap-6 md:gap-8">
           <div className="flex flex-col justify-center items-center gap-[5px]">
-            <div className="max-w-[611px] w-full text-center text-[#D45971] text-lg font-semibold font-omnes">
+            <div className="max-w-[611px] w-full text-center text-[#D45971] text-sm md:text-base lg:text-lg font-semibold font-omnes">
               Our Plans
             </div>
-            <div className="max-w-[717px] w-full text-center text-black text-3xl md:text-4xl font-semibold font-omnes leading-10">
+            <div className="max-w-[717px] w-full text-center text-black text-xl md:text-3xl lg:text-4xl font-semibold font-omnes leading-7 md:leading-9 lg:leading-10">
               Find the Plan That Brings Your Stories to Life
             </div>
-            <div className="max-w-[611px] w-full text-center text-black text-base md:text-lg font-normal font-plus-jakarta">
+            <div className="max-w-[611px] w-full text-center text-black text-xs md:text-sm lg:text-base font-normal font-plus-jakarta">
               Turn everyday moments into personalized adventures. Create unlimited stories in your own voice or the voices of your loved ones.
             </div>
           </div>

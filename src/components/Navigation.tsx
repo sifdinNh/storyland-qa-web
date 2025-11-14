@@ -64,9 +64,9 @@ export const Navigation: React.FC = () => {
 
 
             {/* Get the App Button */}
-            <button className="h-11 px-6 py-4 bg-black rounded-[70px] flex items-center gap-2.5 hover:bg-gray-800 transition-colors">
-              <DownloadIcon width={20} height={20} />
-              <span className="text-white text-base font-semibold font-plus-jakarta leading-5">
+            <button className="h-11 px-5 md:px-6 py-3 md:py-4 bg-black rounded-[70px] flex items-center gap-2 md:gap-2.5 hover:bg-gray-800 transition-colors">
+              <DownloadIcon width={18} height={18} className="md:w-5 md:h-5" />
+              <span className="text-white text-sm md:text-base font-semibold font-plus-jakarta leading-5">
                 Get the App
               </span>
             </button>
@@ -90,28 +90,28 @@ export const Navigation: React.FC = () => {
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="lg:hidden mt-2 mx-4 sm:mx-6 bg-white rounded-2xl border border-gray-200 p-4">
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-3 md:gap-4">
               <button
                 onClick={() => handleNavigation('/', '#why')}
-                className="text-black text-sm font-semibold font-plus-jakarta hover:text-gray-600 transition-colors text-left"
+                className="text-black text-sm md:text-base font-semibold font-plus-jakarta hover:text-gray-600 transition-colors text-left py-2"
               >
                 Why Storyland?
               </button>
               <button
                 onClick={() => handleNavigation('/', '#features')}
-                className="text-black text-sm font-semibold font-plus-jakarta hover:text-gray-600 transition-colors text-left"
+                className="text-black text-sm md:text-base font-semibold font-plus-jakarta hover:text-gray-600 transition-colors text-left py-2"
               >
                 Features
               </button>
               <button
                 onClick={() => handleNavigation('/', '#plans')}
-                className="text-black text-sm font-semibold font-plus-jakarta hover:text-gray-600 transition-colors text-left"
+                className="text-black text-sm md:text-base font-semibold font-plus-jakarta hover:text-gray-600 transition-colors text-left py-2"
               >
                 Plans
               </button>
-              <button className="w-full bg-black text-white py-3 rounded-[70px] hover:bg-gray-800 transition-colors flex items-center justify-center gap-2.5">
-                <DownloadIcon width={20} height={20} />
-                <span className="font-semibold font-plus-jakarta">Get the App</span>
+              <button className="w-full bg-black text-white py-3 rounded-[70px] hover:bg-gray-800 transition-colors flex items-center justify-center gap-2 mt-2">
+                <DownloadIcon width={18} height={18} />
+                <span className="text-sm md:text-base font-semibold font-plus-jakarta">Get the App</span>
               </button>
             </div>
           </div>

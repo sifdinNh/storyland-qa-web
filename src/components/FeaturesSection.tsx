@@ -40,16 +40,16 @@ interface FeatureCardProps {
 
 const FeatureCard: React.FC<FeatureCardProps> = ({ feature }) => {
   return (
-    <div className="bg-white rounded-[34px] p-6 shadow-lg flex flex-col justify-between w-full h-full lg:min-w-[320px] lg:w-[320px] lg:h-[320px] lg:flex-shrink-0">
+    <div className="bg-white rounded-[24px] md:rounded-[34px] p-5 md:p-6 shadow-lg flex flex-col justify-between w-full h-full lg:min-w-[320px] lg:w-[320px] lg:h-[320px] lg:flex-shrink-0">
       <div className="flex flex-col gap-2 text-left">
-        <h3 className="text-black text-xl font-medium font-inter whitespace-pre-line">
+        <h3 className="text-black text-lg md:text-xl font-medium font-inter whitespace-pre-line">
           {feature.title}
         </h3>
-        <p className="text-gray-600 text-base font-normal font-inter leading-none tracking-normal align-middle">
+        <p className="text-gray-600 text-sm md:text-base font-normal font-inter leading-snug md:leading-none tracking-normal align-middle">
           {feature.subtitle}
         </p>
       </div>
-      <div className="relative w-full h-32 flex items-center justify-center flex-shrink-0">
+      <div className="relative w-full h-28 md:h-32 flex items-center justify-center flex-shrink-0">
         <img
           src={feature.imageSrc}
           alt={feature.imageAlt}
@@ -62,22 +62,22 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ feature }) => {
 
 export const FeaturesSection: React.FC = () => {
   return (
-    <section id="features" className="py-16 bg-rose-50 rounded-[50px] overflow-hidden">
-      <div className="container mx-auto px-6 lg:px-20">
+    <section id="features" className="py-12 md:py-16 bg-rose-50 rounded-[30px] md:rounded-[50px] overflow-hidden">
+      <div className="container mx-auto px-5 md:px-6 lg:px-20">
         {/* Header with Castle Image */}
-        <div className="text-center mb-14">
-          <div className="flex justify-center mb-6">
+        <div className="text-center mb-10 md:mb-14">
+          <div className="flex justify-center mb-5 md:mb-6">
             <img
               src="/images/castle.png"
               alt="Magical castle"
-              className="w-[640px] h-auto object-contain"
+              className="w-full max-w-[400px] md:max-w-[500px] lg:max-w-[640px] h-auto object-contain"
             />
           </div>
-          <p className="text-[#D45971] text-lg font-semibold font-omnes mb-2">Our Features</p>
-          <h2 className="text-black text-4xl font-semibold font-omnes leading-tight mb-4">
+          <p className="text-[#D45971] text-sm md:text-base lg:text-lg font-semibold font-omnes mb-2">Our Features</p>
+          <h2 className="text-black text-xl md:text-2xl lg:text-4xl font-semibold font-omnes leading-tight mb-3 md:mb-4 px-4">
             A Storytelling App That Brings<br />Families Closer
           </h2>
-          <p className="text-black text-base font-normal font-inter max-w-3xl mx-auto leading-relaxed">
+          <p className="text-black text-xs md:text-sm lg:text-base font-normal font-inter max-w-3xl mx-auto leading-relaxed px-4">
             Storyland turns small moments into memories your child will hold onto.<br className="hidden md:block" />
             Every story feels personal because it's narrated in the voices they love most.
           </p>

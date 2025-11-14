@@ -83,12 +83,12 @@ const SupportSection = () => {
   };
 
   return (
-    <section className="py-16 px-4 max-w-7xl mx-auto">
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">
+    <section className="py-12 md:py-16 px-4 max-w-7xl mx-auto">
+      <div className="text-center mb-10 md:mb-12">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 md:mb-4">
           Get in Touch
         </h1>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        <p className="text-sm md:text-base lg:text-lg text-gray-600 max-w-2xl mx-auto">
           Have questions, issues, or feedback? We're here to help! Reach out to our support team and we'll get back to you as soon as possible.
         </p>
       </div>

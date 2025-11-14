@@ -17,25 +17,25 @@ export const WhyStoryland: React.FC = () => {
   ];
 
   return (
-    <section className="w-full px-4 py-12 md:py-20">
+    <section className="w-full px-4 md:px-5 py-12 md:py-20">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-1 md:mb-2">
-          <p className="text-[#D45971] text-lg md:text-xl font-medium">
+          <p className="text-[#D45971] text-sm md:text-base lg:text-lg font-medium">
             Why Storyland?
           </p>
         </div>
 
         {/* Main Title */}
         <h2
-          className="font-omnes font-semibold text-[38px] leading-[44px] text-center align-middle tracking-normal text-gray-900 mb-10 md:mb-16"
+          className="font-omnes font-semibold text-[24px] md:text-[30px] lg:text-[38px] leading-[30px] md:leading-[36px] lg:leading-[44px] text-center align-middle tracking-normal text-gray-900 mb-10 md:mb-16 px-2"
         >
           Stories Should Feel Personal. Not Generic.
         </h2>
 
         {/* Book Illustration */}
         <div className="flex justify-center mb-12 md:mb-16">
-          <div className="w-64 h-64 md:w-80 md:h-80">
+          <div className="w-56 h-56 md:w-64 md:h-64 lg:w-80 lg:h-80">
             <img
               src="/images/book-illustraction.png"
               alt="Book illustration"
@@ -49,12 +49,12 @@ export const WhyStoryland: React.FC = () => {
           {painPoints.map((point, index) => (
             <div key={index} className="flex flex-col items-center">
               <div className="relative w-full pt-10 md:pt-12">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[56px] h-[56px]  bg-white rounded-full flex items-center justify-center z-10 shadow-sm">
-                  <span className="text-3xl ">{point.emoji}</span>
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[48px] h-[48px] md:w-[56px] md:h-[56px] bg-white rounded-full flex items-center justify-center z-10 shadow-sm">
+                  <span className="text-2xl md:text-3xl">{point.emoji}</span>
                 </div>
-                <div className="bg-gray-100 rounded-3xl p-3 md:p-8 pt-3 md:pt-[28]">
+                <div className="bg-gray-100 rounded-2xl md:rounded-3xl p-6 md:p-8 pt-8 md:pt-[28]">
                   <h3
-                    className="font-inter font-medium text-[18px] leading-[100%] tracking-normal text-center align-middle capitalize text-gray-900"
+                    className="font-inter font-medium text-[16px] md:text-[18px] leading-[120%] md:leading-[100%] tracking-normal text-center align-middle capitalize text-gray-900"
                   >
                     {point.text}
                   </h3>
