@@ -1,6 +1,7 @@
 import React from 'react';
 import { AppStoreIcon } from './icons/AppStoreIcon';
 import { GooglePlayIcon } from './icons/GooglePlayIcon';
+import { ShieldIcon } from './icons/ShieldIcon';
 
 export const FooterCTA: React.FC = () => {
   return (
@@ -21,17 +22,17 @@ export const FooterCTA: React.FC = () => {
             {/* Text Content */}
             <div className="flex flex-col items-center gap-3">
               <h2 className="text-center text-black text-4xl font-semibold font-omnes max-w-3xl">
-                Start Creating Magical Memories Today
+                Join thousands of families bringing stories to life through laughter, imagination, and their own voices.
               </h2>
               <p className="text-center text-black text-lg font-normal font-inter max-w-lg">
-                Join families everywhere bringing stories to life through love, laughter, and their own voices.
+                Create moments your child will remember forever.
               </p>
             </div>
 
             {/* App Store Buttons */}
             <div className="flex flex-col items-center gap-3">
               <div className="flex gap-3">
-                <a href="#" className="inline-flex hover:opacity-90 transition-opacity">
+                <a href="https://apps.apple.com/us/app/storyland-family-stories/id6749536560" className="inline-flex hover:opacity-90 transition-opacity">
                   <AppStoreIcon width={150} height={50} />
                 </a>
                 <a href="#" className="inline-flex hover:opacity-90 transition-opacity">
@@ -42,9 +43,7 @@ export const FooterCTA: React.FC = () => {
               {/* Trust Badges */}
               <div className="flex flex-wrap justify-center items-center gap-4">
                 <div className="flex items-center gap-1">
-                  <svg className="w-4 h-4 text-orange-400" viewBox="0 0 16 16" fill="none">
-                    <rect x="2.67" y="1.33" width="10" height="14" stroke="currentColor" strokeWidth="1.33" />
-                  </svg>
+                  <ShieldIcon width={16} height={16} />
                   <span className="text-black text-xs font-normal font-nunito leading-5">
                     COPPA-compliant & kid-safe
                   </span>

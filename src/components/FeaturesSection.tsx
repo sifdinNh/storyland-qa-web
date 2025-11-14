@@ -2,28 +2,33 @@ import React from 'react';
 
 interface Feature {
   title: string;
+  subtitle: string;
   imageSrc: string;
   imageAlt: string;
 }
 
 const features: Feature[] = [
   {
-    title: 'Create Stories\nIn Seconds',
+    title: 'Create Stories In Seconds',
+    subtitle: 'Type a simple idea and watch it turn into a magical adventure with beautiful visuals.',
     imageSrc: '/images/bear.png',
     imageAlt: 'Story creation scene',
   },
   {
-    title: 'Add Family Voices\nFor Extra Magic',
+    title: 'Add Family Voices For Extra Magic',
+    subtitle: 'Let mom, dad, grandparents, or siblings tell the story. Your child hears real love in every line.',
     imageSrc: '/images/voice.png',
     imageAlt: 'Family voices illustration',
   },
   {
-    title: 'Explore In Arabic,\nEnglish, French & More',
+    title: 'Explore In Arabic,English, French & More',
+    subtitle: 'Stories feel familiar, comforting, and natural in your home\'s main language.',
     imageSrc: '/images/Languages.png',
     imageAlt: 'Multiple languages',
   },
   {
-    title: 'Educational Games\nthat grow young minds',
+    title: 'Educational Games that grow young minds',
+    subtitle: 'Interactive games and activities designed to make learning fun while developing essential skills.',
     imageSrc: '/images/language-glob.png',
     imageAlt: 'Educational games language globe',
   },
@@ -35,11 +40,16 @@ interface FeatureCardProps {
 
 const FeatureCard: React.FC<FeatureCardProps> = ({ feature }) => {
   return (
-    <div className="bg-white rounded-[34px] p-10 shadow-lg flex flex-col items-center gap-9 w-full lg:min-w-[320px] lg:w-[320px] lg:flex-shrink-0">
-      <h3 className="text-black text-xl font-medium font-inter text-center whitespace-pre-line">
-        {feature.title}
-      </h3>
-      <div className="relative w-full h-48 flex items-center justify-center">
+    <div className="bg-white rounded-[34px] p-6 shadow-lg flex flex-col justify-between w-full h-full lg:min-w-[320px] lg:w-[320px] lg:h-[320px] lg:flex-shrink-0">
+      <div className="flex flex-col gap-2 text-left">
+        <h3 className="text-black text-xl font-medium font-inter whitespace-pre-line">
+          {feature.title}
+        </h3>
+        <p className="text-gray-600 text-base font-normal font-inter leading-none tracking-normal align-middle">
+          {feature.subtitle}
+        </p>
+      </div>
+      <div className="relative w-full h-32 flex items-center justify-center flex-shrink-0">
         <img
           src={feature.imageSrc}
           alt={feature.imageAlt}
@@ -63,13 +73,13 @@ export const FeaturesSection: React.FC = () => {
               className="w-[640px] h-auto object-contain"
             />
           </div>
-          <p className="text-red-400 text-lg font-semibold font-omnes mb-2">Features</p>
-          <h2 className="text-black text-4xl font-semibold font-omnes leading-10 mb-4">
-            A Magical Storytelling App<br />for the Whole Family
+          <p className="text-red-400 text-lg font-semibold font-omnes mb-2">Our Features</p>
+          <h2 className="text-black text-4xl font-semibold font-omnes leading-tight mb-4">
+            A Storytelling App That Brings<br />Families Closer
           </h2>
-          <p className="text-black text-base font-normal font-inter max-w-2xl mx-auto">
-            Storyland lets you turn everyday moments into personalized<br className="hidden md:block" />
-            adventures, using your own voice, or the voices of loved ones.
+          <p className="text-black text-base font-normal font-inter max-w-3xl mx-auto leading-relaxed">
+            Storyland turns small moments into memories your child will hold onto.<br className="hidden md:block" />
+            Every story feels personal because it's narrated in the voices they love most.
           </p>
         </div>
 

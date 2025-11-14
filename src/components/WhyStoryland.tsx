@@ -4,15 +4,15 @@ export const WhyStoryland: React.FC = () => {
   const painPoints = [
     {
       emoji: '👨',
-      text: 'Tired Of Reading The Same Books Every Night?'
+      text: 'Your child deserves more than the same old book'
     },
     {
       emoji: '👩',
-      text: "Can't Always Be There To Read To Your Kids?"
+      text: "You can’t magically be there every night"
     },
     {
       emoji: '👴',
-      text: 'Wish Grandma Or Grandpa Could Tell Them A Story?'
+      text: 'loved ones can’t read to them from miles away'
     }
   ];
 
@@ -49,10 +49,10 @@ export const WhyStoryland: React.FC = () => {
           {painPoints.map((point, index) => (
             <div key={index} className="flex flex-col items-center">
               <div className="relative w-full pt-10 md:pt-12">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[56px] h-[56px] md:w-24 md:h-24 bg-white rounded-full flex items-center justify-center z-10 shadow-sm">
-                  <span className="text-4xl md:text-5xl">{point.emoji}</span>
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[56px] h-[56px]  bg-white rounded-full flex items-center justify-center z-10 shadow-sm">
+                  <span className="text-3xl ">{point.emoji}</span>
                 </div>
-                <div className="bg-gray-100 rounded-3xl p-6 md:p-8 pt-16 md:pt-20">
+                <div className="bg-gray-100 rounded-3xl p-3 md:p-8 pt-3 md:pt-[28]">
                   <h3
                     className="font-inter font-medium text-[18px] leading-[100%] tracking-normal text-center align-middle capitalize text-gray-900"
                   >

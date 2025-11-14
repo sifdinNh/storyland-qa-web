@@ -25,7 +25,7 @@ export const HeroSection: React.FC = () => {
             <div className="flex flex-col justify-start items-start gap-3">
               {/* App Store Buttons */}
               <div className="flex gap-3">
-                <a href="#" className="inline-flex hover:opacity-90 transition-opacity">
+                <a href="https://apps.apple.com/us/app/storyland-family-stories/id6749536560" className="inline-flex hover:opacity-90 transition-opacity">
                   <AppStoreIcon width={150} height={50} />
                 </a>
                 <a href="#" className="inline-flex hover:opacity-90 transition-opacity">
