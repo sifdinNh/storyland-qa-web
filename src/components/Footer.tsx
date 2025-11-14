@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { ShieldIcon } from './icons/ShieldIcon';
 
 export const Footer: React.FC = () => {
   return (
@@ -10,13 +12,19 @@ export const Footer: React.FC = () => {
             <p className="text-black text-base font-medium font-plus-jakarta">
               © 2025 Storyland. All rights reserved.
             </p>
-            <div className="flex gap-3">
-              <a href="#" className="text-neutral-700 text-sm font-normal font-plus-jakarta underline hover:text-black transition-colors">
+            <div className="flex flex-wrap items-center gap-3">
+              <Link to="/terms" className="text-neutral-700 text-sm font-normal font-plus-jakarta underline hover:text-black transition-colors">
                 Terms & Conditions
-              </a>
-              <a href="#" className="text-neutral-700 text-sm font-normal font-plus-jakarta underline hover:text-black transition-colors">
+              </Link>
+              <Link to="/privacy" className="text-neutral-700 text-sm font-normal font-plus-jakarta underline hover:text-black transition-colors">
                 Privacy Policy
-              </a>
+              </Link>
+              <div className="flex items-center gap-1.5">
+                <ShieldIcon width={16} height={16} />
+                <span className="text-neutral-700 text-sm font-medium font-plus-jakarta">
+                  COPPA Compliant
+                </span>
+              </div>
             </div>
           </div>
 

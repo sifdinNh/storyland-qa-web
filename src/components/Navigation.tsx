@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { DownloadIcon } from './icons/DownloadIcon';
+import { ShieldIcon } from './icons/ShieldIcon';
 
 export const Navigation: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -42,6 +43,14 @@ export const Navigation: React.FC = () => {
               >
                 Plans
               </a>
+            </div>
+
+            {/* COPPA Compliance */}
+            <div className="flex items-center gap-2">
+              <ShieldIcon width={16} height={16} />
+              <span className="text-black text-xs font-medium font-plus-jakarta">
+                COPPA Compliant
+              </span>
             </div>
 
             {/* Get the App Button */}
@@ -90,6 +99,12 @@ export const Navigation: React.FC = () => {
               >
                 Plans
               </a>
+              <div className="flex items-center gap-2 py-2">
+                <ShieldIcon width={16} height={16} />
+                <span className="text-black text-sm font-medium font-plus-jakarta">
+                  COPPA Compliant
+                </span>
+              </div>
               <button className="w-full bg-black text-white py-3 rounded-[70px] hover:bg-gray-800 transition-colors flex items-center justify-center gap-2.5">
                 <DownloadIcon width={20} height={20} />
                 <span className="font-semibold font-plus-jakarta">Get the App</span>

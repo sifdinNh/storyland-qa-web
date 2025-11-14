@@ -20,17 +20,17 @@ export const WhyStoryland: React.FC = () => {
     <section className="w-full px-4 py-12 md:py-20">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-6 md:mb-8">
+        <div className="text-center mb-1 md:mb-2">
           <p className="text-pink-500 text-lg md:text-xl font-medium">
             Why Storyland?
           </p>
         </div>
 
         {/* Main Title */}
-        <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-center text-gray-900 mb-10 md:mb-16 leading-tight">
-          Same Stories. Same<br className="md:hidden" />
-          Routine. Not Enough<br className="md:hidden" />
-          Time Together?
+        <h2
+          className="font-omnes font-semibold text-[38px] leading-[44px] text-center align-middle tracking-normal text-gray-900 mb-10 md:mb-16"
+        >
+          Stories Should Feel Personal. Not Generic.
         </h2>
 
         {/* Book Illustration */}
@@ -49,7 +49,7 @@ export const WhyStoryland: React.FC = () => {
           {painPoints.map((point, index) => (
             <div key={index} className="flex flex-col items-center">
               <div className="relative w-full pt-10 md:pt-12">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-20 md:w-24 md:h-24 bg-white rounded-full flex items-center justify-center z-10 shadow-sm">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[56px] h-[56px] md:w-24 md:h-24 bg-white rounded-full flex items-center justify-center z-10 shadow-sm">
                   <span className="text-4xl md:text-5xl">{point.emoji}</span>
                 </div>
                 <div className="bg-gray-100 rounded-3xl p-6 md:p-8 pt-16 md:pt-20">

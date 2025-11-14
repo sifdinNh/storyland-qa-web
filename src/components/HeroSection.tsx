@@ -2,6 +2,7 @@ import React from 'react';
 import { StarIcon } from './icons/StarIcon';
 import { AppStoreIcon } from './icons/AppStoreIcon';
 import { GooglePlayIcon } from './icons/GooglePlayIcon';
+import { ShieldIcon } from './icons/ShieldIcon';
 
 export const HeroSection: React.FC = () => {
   return (
@@ -11,11 +12,13 @@ export const HeroSection: React.FC = () => {
           {/* Left Content */}
           <div className="w-full lg:w-[584px] flex flex-col justify-center items-start gap-8">
             <div className="w-full flex flex-col justify-start items-start gap-5">
-              <h1 className="w-full text-black text-4xl lg:text-6xl font-semibold font-omnes leading-tight lg:leading-[63px]">
-                Instantly Create Personalized Stories<br />for Your Child
+              <h1
+                className="w-full text-black font-omnes font-semibold text-[63px] leading-[100%] tracking-[0] align-middle"
+              >
+                Stories Told in the Voices Your Child Loves Most
               </h1>
-              <p className="w-full lg:w-[511px] text-black text-lg font-medium font-inter">
-                Create personalized stories in the voices of your loved ones — and bring them to life through AI magic.
+              <p className="w-full lg:w-[511px] font-inter font-medium text-[18px] leading-[100%] tracking-[0] align-middle text-black">
+                Create magical, personalized stories for your child—narrated by you, your partner, or any family member. Turn simple moments into memories they'll keep forever.
               </p>
             </div>
 
@@ -33,9 +36,7 @@ export const HeroSection: React.FC = () => {
               {/* Trust Badges */}
               <div className="flex flex-wrap items-center gap-4">
                 <div className="flex items-center gap-1">
-                  <svg className="w-4 h-4 text-orange-400" viewBox="0 0 16 16" fill="none">
-                    <rect x="2.67" y="1.33" width="10" height="14" stroke="currentColor" strokeWidth="1.33" />
-                  </svg>
+                  <ShieldIcon width={16} height={16} />
                   <span className="text-black text-xs font-normal font-nunito leading-5">
                     COPPA-compliant & kid-safe
                   </span>
