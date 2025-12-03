@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { UnlockIcon } from './icons/UnlockIcon';
 import { MostPopularIcon } from './icons/MostPopularIcon';
 import { StarIcon } from './icons/StarIcon';
 
@@ -12,6 +11,8 @@ interface PricingCardProps {
   yearlyStars: number;
   isPopular?: boolean;
   pricingPeriod: 'monthly' | 'yearly';
+  isSelected?: boolean;
+  onSelect?: () => void;
 }
 
 const PricingCard: React.FC<PricingCardProps> = ({
@@ -22,11 +23,15 @@ const PricingCard: React.FC<PricingCardProps> = ({
   monthlyStars,
   yearlyStars,
   isPopular = false,
-  pricingPeriod
+  pricingPeriod,
+  isSelected = false,
+  onSelect
 }) => {
   const stars = pricingPeriod === 'monthly' ? monthlyStars : yearlyStars;
   return (
-    <div className="w-full md:flex-1 md:max-w-md px-4 py-4 bg-white rounded-3xl shadow-[0px_2px_4px_-2px_rgba(0,0,0,0.12)] outline outline-1 outline-offset-[-1px] outline-neutral-200 flex flex-col justify-start items-start gap-6 overflow-hidden">
+    <div
+      onClick={onSelect}
+      className={`w-full md:flex-1 md:max-w-md px-4 py-4 bg-white rounded-3xl shadow-[0px_2px_4px_-2px_rgba(0,0,0,0.12)] outline outline-2 outline-offset-[-2px] ${isSelected ? 'outline-blue-900' : 'outline-neutral-200'} flex flex-col justify-start items-start gap-6 overflow-hidden cursor-pointer transition-all hover:shadow-md`}>
       <div className="self-stretch flex flex-col justify-start items-start gap-3.5">
         {/* Badge or placeholder */}
         <div className="inline-flex justify-start items-center gap-0.5">
@@ -90,20 +95,30 @@ const PricingCard: React.FC<PricingCardProps> = ({
           </div>
         </div>
       </div>
-      <div className="self-stretch flex flex-col justify-start items-center gap-2">
-        <button className="self-stretch px-6 py-3 bg-blue-900 rounded-full outline outline-1 outline-offset-[-1px] inline-flex justify-center items-center gap-1.5 hover:bg-blue-800 transition-colors">
-          <UnlockIcon className="text-white" width={24} height={15} />
-          <div className="text-center justify-center text-white text-base font-space-grotesk capitalize leading-5">
-            Unlock now
-          </div>
-        </button>
-      </div>
     </div>
   );
 };
 
+type PlanType = 'all-stars' | 'explorer';
+
 export const SubscriptionPlansSection: React.FC = () => {
   const [pricingPeriod, setPricingPeriod] = useState<'monthly' | 'yearly'>('monthly');
+  const [selectedPlan, setSelectedPlan] = useState<PlanType>('all-stars');
+  const [email, setEmail] = useState('');
+
+  const isValidEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const handleGetStarted = () => {
+    if (!isValidEmail(email)) return;
+    const encodedEmail = encodeURIComponent(email);
+    const paymentUrl = `https://pay.rev.cat/ljaknhfizwcfmciz/${encodedEmail}`;
+    window.open(paymentUrl, '_blank');
+  };
+
+  const emailIsValid = isValidEmail(email);
 
   return (
     <section id="plans" className="py-12 md:py-20 bg-white">
@@ -175,6 +190,8 @@ export const SubscriptionPlansSection: React.FC = () => {
             yearlyStars={3000}
             isPopular={true}
             pricingPeriod={pricingPeriod}
+            isSelected={selectedPlan === 'all-stars'}
+            onSelect={() => setSelectedPlan('all-stars')}
           />
           <PricingCard
             title="Explorer Plan"
@@ -185,7 +202,31 @@ export const SubscriptionPlansSection: React.FC = () => {
             yearlyStars={1300}
             isPopular={false}
             pricingPeriod={pricingPeriod}
+            isSelected={selectedPlan === 'explorer'}
+            onSelect={() => setSelectedPlan('explorer')}
           />
+        </div>
+
+        {/* Email Input and CTA */}
+        <div className="mt-6 max-w-[480px] w-full flex flex-col items-center gap-3">
+          <input
+            type="email"
+            placeholder="Email Address"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-full text-gray-700 text-base font-space-grotesk placeholder-gray-400 focus:outline-none focus:border-blue-900 focus:ring-1 focus:ring-blue-900"
+          />
+          <button
+            onClick={handleGetStarted}
+            disabled={!emailIsValid}
+            className={`w-full px-6 py-3 rounded-[20px] text-base font-semibold font-inter transition-colors ${
+              emailIsValid
+                ? 'bg-[#1A3A77] text-white hover:bg-[#153063]'
+                : 'bg-[#E6E9F0] text-[#012468] cursor-not-allowed'
+            }`}
+          >
+            Get started
+          </button>
         </div>
       </div>
     </section>
