@@ -1,15 +1,12 @@
-import React from 'react';
-import { Navigation } from '../components/Navigation';
+import { Navigation } from '../components/layout/Navigation';
 import SupportSection from '../components/SupportSection';
-import { Footer } from '../components/Footer';
+import { Footer } from '../components/layout/Footer';
 
 const Support = () => {
   return (
-    <div className="items-stretch flex flex-col">
-      <div className="bg-white">
-        <Navigation />
-      </div>
-      <main className="bg-white">
+    <div className="min-h-screen flex flex-col bg-background">
+      <Navigation />
+      <main className="flex-1 pt-24">
         <SupportSection />
       </main>
       <Footer />
