@@ -3,11 +3,11 @@
     "relation": ["delegate_permission/common.handle_all_urls"],
     "target": {
       "namespace": "android_app",
-      "package_name": "com.storylandapp.storyland",
+      "package_name": "com.storylandapp.storyland1",
       "sha256_cert_fingerprints": [
-        "06:75:93:DF:FE:CD:41:01:9E:20:99:C7:CC:AB:27:3D:6B:78:BB:F2:1D:5D:16:8D:69:4B:BB:41:04:A0:AE:4E",
+        "21:AC:94:3D:BE:2B:4A:28:5F:51:77:8D:37:0D:20:05:E9:B8:9D:81:3C:E7:0E:1C:B5:2C:38:6B:2B:0A:CF:7C",
         "FA:C6:17:45:DC:09:03:78:6F:B9:ED:E6:2A:96:2B:39:9F:73:48:F0:BB:6F:89:9B:83:32:66:75:91:03:3B:9C",
-        "83:51:AC:5F:9A:1C:25:A2:3C:0E:CF:20:91:57:A1:5E:A6:84:43:11:2B:D2:D2:21:D1:DD:0F:2B:76:3D:27:0B"
+        "ED:3B:AC:D9:14:C3:E6:3C:4A:4C:EF:99:E6:74:BB:A3:4E:93:E7:AF:5E:33:9F:AA:9E:BA:E3:0B:8F:4E:DC:FE"
       ]
     }
   },
@@ -15,7 +15,7 @@
     "relation": ["delegate_permission/common.handle_all_urls"],
     "target": {
       "namespace": "android_app",
-      "package_name": "com.storylandapp.storyland.development",
+      "package_name": "com.storylandapp.storyland1.development",
       "sha256_cert_fingerprints": [
         "FA:C6:17:45:DC:09:03:78:6F:B9:ED:E6:2A:96:2B:39:9F:73:48:F0:BB:6F:89:9B:83:32:66:75:91:03:3B:9C"]
     }
