@@ -114,7 +114,14 @@ export function Navigation() {
             <MagicButton
               variant="primary"
               size="sm"
-              onClick={() => window.location.href = '/#pricing'}
+              onClick={() => {
+                const element = document.getElementById('pricing-signup');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else {
+                  window.location.href = '/#pricing-signup';
+                }
+              }}
             >
               Join Storyland+
             </MagicButton>
@@ -193,7 +200,12 @@ export function Navigation() {
                 className="w-full mt-3 min-h-[48px]"
                 onClick={() => {
                   setIsOpen(false);
-                  window.location.href = '/#pricing';
+                  const element = document.getElementById('pricing-signup');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                  } else {
+                    window.location.href = '/#pricing-signup';
+                  }
                 }}
               >
                 Join Storyland+
