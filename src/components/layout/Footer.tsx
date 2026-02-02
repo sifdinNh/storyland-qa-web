@@ -81,7 +81,6 @@ export function Footer() {
           <div className="flex flex-wrap justify-center gap-6 md:gap-8 text-sm">
             <Link to="/privacy" className="text-muted-foreground hover:text-primary transition-colors font-medium py-2 min-h-[44px] flex items-center">Privacy</Link>
             <Link to="/terms" className="text-muted-foreground hover:text-primary transition-colors font-medium py-2 min-h-[44px] flex items-center">Terms</Link>
-            <a href="mailto:hello@storylandapp.ai" className="text-muted-foreground hover:text-primary transition-colors font-medium py-2 min-h-[44px] flex items-center">Contact</a>
             <Link to="/support" className="text-muted-foreground hover:text-primary transition-colors font-medium py-2 min-h-[44px] flex items-center">Support</Link>
           </div>
 

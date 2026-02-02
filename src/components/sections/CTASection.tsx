@@ -76,14 +76,16 @@ export function CTASection() {
               </motion.a>
 
               <motion.a
-                href="#"
+                href="https://play.google.com/store/apps/details?id=com.storylandapp.storyland1"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05, y: -3 }}
                 whileTap={{ scale: 0.98 }}
                 className="w-full sm:w-auto flex items-center justify-center gap-3 px-6 md:px-8 py-3.5 md:py-4 bg-white/15 backdrop-blur-md text-white font-bold rounded-xl md:rounded-2xl border border-white/30 hover:bg-white/25 transition-all min-h-[52px]"
               >
                 <Play className="w-6 h-6 md:w-7 md:h-7 fill-white" />
                 <div className="text-left">
-                  <div className="text-xs opacity-70">Coming soon on</div>
+                  <div className="text-xs opacity-70">Get it on</div>
                   <div className="text-base md:text-lg font-bold -mt-1">Google Play</div>
                 </div>
               </motion.a>

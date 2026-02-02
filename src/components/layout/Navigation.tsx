@@ -6,9 +6,9 @@ import { ThemeToggle } from "../ui/ThemeToggle";
 import storylandLogo from "@/assets/storyland-star-logo.png";
 
 const navLinks = [
-  { label: "How It Works", href: "#how-it-works" },
-  { label: "Why Storyland", href: "#why-storyland" },
-  { label: "Pricing", href: "#pricing" },
+  { label: "How It Works", href: "/#how-it-works" },
+  { label: "Why Storyland", href: "/#why-storyland" },
+  { label: "Pricing", href: "/#pricing" },
   { label: "Partner", href: "/partner", isRoute: true },
 ];
 
@@ -25,7 +25,10 @@ export function Navigation() {
       setScrolled(window.scrollY > 50);
 
       // Detect active section
-      const sections = navLinks.filter(link => !link.isRoute).map(link => link.href.substring(1));
+      const sections = navLinks.filter(link => !link.isRoute).map(link => {
+        const href = link.href;
+        return href.includes('#') ? href.split('#')[1] : href.substring(1);
+      });
       for (const section of sections.reverse()) {
         const element = document.getElementById(section);
         if (element) {
@@ -78,7 +81,8 @@ export function Navigation() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => {
-              const isActive = !link.isRoute && activeSection === link.href.substring(1);
+              const sectionId = link.href.includes('#') ? link.href.split('#')[1] : '';
+              const isActive = !link.isRoute && activeSection === sectionId;
               return link.isRoute ? (
                 <motion.a
                   key={link.label}
@@ -113,8 +117,12 @@ export function Navigation() {
           {/* CTA Button & Theme Toggle */}
           <div className="hidden md:flex items-center gap-3">
             <ThemeToggle />
-            <MagicButton variant="primary" size="sm">
-              Download App
+            <MagicButton
+              variant="primary"
+              size="sm"
+              onClick={() => window.location.href = '/#pricing'}
+            >
+              Join Storyland
             </MagicButton>
           </div>
 
@@ -185,8 +193,16 @@ export function Navigation() {
               }}
               transition={{ duration: 0.2, delay: isOpen ? 0.25 : 0 }}
             >
-              <MagicButton variant="primary" size="md" className="w-full mt-3 min-h-[48px]">
-                Download App
+              <MagicButton
+                variant="primary"
+                size="md"
+                className="w-full mt-3 min-h-[48px]"
+                onClick={() => {
+                  setIsOpen(false);
+                  window.location.href = '/#pricing';
+                }}
+              >
+                Join Storyland
               </MagicButton>
             </motion.div>
           </div>

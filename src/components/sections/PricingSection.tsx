@@ -50,7 +50,7 @@ export function PricingSection() {
     if (!isValidEmail(email)) return;
     const encodedEmail = encodeURIComponent(email);
     const packageId = billingPeriod === "yearly" ? "plus_yearly" : "plus_monthly";
-    const paymentUrl = `https://pay.rev.cat/dnzjolctirwmjgmj/${encodedEmail}/checkout?package_id=${packageId}`;
+    const paymentUrl = `https://pay.rev.cat/sandbox/lelnbclqddvxkzvh/${encodedEmail}/checkout?package_id=${packageId}`;
     window.open(paymentUrl, "_self");
   };
 
@@ -100,11 +100,10 @@ export function PricingSection() {
           <div className="inline-flex items-center bg-muted rounded-full p-1">
             <button
               onClick={() => setBillingPeriod("yearly")}
-              className={`relative px-4 md:px-6 py-2.5 md:py-3 rounded-full font-semibold transition-all text-sm md:text-base min-h-[44px] ${
-                billingPeriod === "yearly"
+              className={`relative px-4 md:px-6 py-2.5 md:py-3 rounded-full font-semibold transition-all text-sm md:text-base min-h-[44px] ${billingPeriod === "yearly"
                   ? "bg-primary text-primary-foreground"
                   : "text-muted-foreground hover:text-foreground"
-              }`}
+                }`}
             >
               Yearly
               {billingPeriod === "yearly" && (
@@ -115,11 +114,10 @@ export function PricingSection() {
             </button>
             <button
               onClick={() => setBillingPeriod("monthly")}
-              className={`px-4 md:px-6 py-2.5 md:py-3 rounded-full font-semibold transition-all text-sm md:text-base min-h-[44px] ${
-                billingPeriod === "monthly"
+              className={`px-4 md:px-6 py-2.5 md:py-3 rounded-full font-semibold transition-all text-sm md:text-base min-h-[44px] ${billingPeriod === "monthly"
                   ? "bg-primary text-primary-foreground"
                   : "text-muted-foreground hover:text-foreground"
-              }`}
+                }`}
             >
               Monthly
             </button>
@@ -208,11 +206,10 @@ export function PricingSection() {
               disabled={!emailIsValid}
               whileHover={emailIsValid ? { scale: 1.02 } : {}}
               whileTap={emailIsValid ? { scale: 0.98 } : {}}
-              className={`w-full py-3.5 md:py-4 font-bold rounded-xl md:rounded-2xl shadow-lg transition-colors text-base min-h-[48px] ${
-                emailIsValid
+              className={`w-full py-3.5 md:py-4 font-bold rounded-xl md:rounded-2xl shadow-lg transition-colors text-base min-h-[48px] ${emailIsValid
                   ? "bg-primary text-primary-foreground hover:bg-primary/90 cursor-pointer"
                   : "bg-muted text-muted-foreground cursor-not-allowed"
-              }`}
+                }`}
             >
               Get started
             </motion.button>

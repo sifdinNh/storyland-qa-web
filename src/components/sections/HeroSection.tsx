@@ -125,14 +125,16 @@ export function HeroSection() {
             </motion.a>
 
             <motion.a
-              href="#"
+              href="https://play.google.com/store/apps/details?id=com.storylandapp.storyland1"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05, y: -3 }}
               whileTap={{ scale: 0.98 }}
               className="flex items-center justify-center gap-3 px-6 md:px-8 py-3.5 md:py-4 bg-white/15 backdrop-blur-md text-white font-bold rounded-2xl border border-white/30 min-h-[52px]"
             >
               <Play className="w-7 h-7 md:w-8 md:h-8 fill-white" />
               <div className="text-left">
-                <div className="text-xs opacity-70">Coming soon on</div>
+                <div className="text-xs opacity-70">Get it on</div>
                 <div className="text-sm md:text-base">Google Play</div>
               </div>
             </motion.a>
