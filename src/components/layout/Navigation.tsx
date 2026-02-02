@@ -2,7 +2,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { MagicButton } from "../ui/MagicButton";
-import { ThemeToggle } from "../ui/ThemeToggle";
 import storylandLogo from "@/assets/storyland-star-logo.png";
 
 const navLinks = [
@@ -114,9 +113,8 @@ export function Navigation() {
             })}
           </div>
 
-          {/* CTA Button & Theme Toggle */}
+          {/* CTA Button */}
           <div className="hidden md:flex items-center gap-3">
-            <ThemeToggle />
             <MagicButton
               variant="primary"
               size="sm"
