@@ -106,11 +106,9 @@ export function PricingSection() {
                 }`}
             >
               Yearly
-              {billingPeriod === "yearly" && (
-                <span className="ml-1 md:ml-2 px-1.5 md:px-2 py-0.5 bg-amber-400 text-amber-900 text-xs font-bold rounded-full">
-                  17% off
-                </span>
-              )}
+              <span className="ml-1 md:ml-2 px-1.5 md:px-2 py-0.5 bg-amber-400 text-amber-900 text-xs font-bold rounded-full">
+                17% off
+              </span>
             </button>
             <button
               onClick={() => setBillingPeriod("monthly")}
