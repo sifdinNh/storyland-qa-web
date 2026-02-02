@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { Navigation } from "@/components/layout/Navigation";
 import { Footer } from "@/components/layout/Footer";
 import { HeroSection } from "@/components/sections/HeroSection";
@@ -13,6 +15,18 @@ import { ExitIntentModal } from "@/components/ui/ExitIntentModal";
 import { SEOHead } from "@/components/seo/SEOHead";
 
 const Index = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.querySelector(location.hash);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    }
+  }, [location.hash]);
   return (
     <main id="main-content" className="min-h-screen overflow-x-hidden bg-background">
       <SEOHead
@@ -27,11 +41,11 @@ const Index = () => {
       <div id="how-it-works">
         <HowStorylandWorksSection />
       </div>
-      <div id="pricing">
-        <PricingSection />
-      </div>
       <div id="why-storyland">
         <TestimonialsSection />
+      </div>
+      <div id="pricing">
+        <PricingSection />
       </div>
       <div id="faq">
         <FAQSection />
