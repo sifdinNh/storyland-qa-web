@@ -59,11 +59,7 @@ export function Navigation() {
 
       <div className="mx-2 md:mx-4 mt-2 md:mt-4">
         <motion.div
-          className={`backdrop-blur-lg border rounded-xl md:rounded-2xl shadow-sm px-4 md:px-6 py-3 md:py-4 flex items-center justify-between max-w-7xl mx-auto transition-all duration-300 ${
-            scrolled
-              ? "bg-card/98 border-border shadow-lg"
-              : "bg-card/80 border-border/50"
-          }`}
+          className="backdrop-blur-lg border rounded-xl md:rounded-2xl px-4 md:px-6 py-3 md:py-4 flex items-center justify-between max-w-7xl mx-auto bg-white/95 border-border shadow-lg"
         >
           {/* Logo */}
           <a href="/" className="flex items-center gap-2">
