@@ -120,7 +120,7 @@ export function Navigation() {
               size="sm"
               onClick={() => window.location.href = '/#pricing'}
             >
-              Join Storyland
+              Join Storyland+
             </MagicButton>
           </div>
 
@@ -200,7 +200,7 @@ export function Navigation() {
                   window.location.href = '/#pricing';
                 }}
               >
-                Join Storyland
+                Join Storyland+
               </MagicButton>
             </motion.div>
           </div>
