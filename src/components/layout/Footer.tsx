@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Heart, Instagram, Facebook, Linkedin, Send } from "lucide-react";
+import { Heart, Instagram, Send } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import storylandLogo from "@/assets/storyland-star-logo.png";
@@ -23,8 +23,6 @@ export function Footer() {
 
   const socialLinks = [
     { icon: Instagram, href: "https://www.instagram.com/storylandapp/", label: "Instagram" },
-    { icon: Facebook, href: "https://www.facebook.com/profile.php?id=61579653697548", label: "Facebook" },
-    { icon: Linkedin, href: "https://www.linkedin.com/company/storylandapp/", label: "LinkedIn" },
   ];
 
   return (
