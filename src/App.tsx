@@ -11,6 +11,7 @@ import Support from "./pages/Support";
 import Partner from "./pages/Partner";
 import Auth from "./pages/Auth";
 import NotFound from "./pages/NotFound";
+import { CrispChatWidget } from "./components/ui/CrispChatWidget";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +32,7 @@ const App = () => (
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
+          <CrispChatWidget />
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
