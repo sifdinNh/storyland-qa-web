@@ -11,9 +11,9 @@ export function PricingSection() {
   const plan = {
     yearly: {
       name: "Storyland Plus",
-      price: "$89.99",
+      price: "$59.99",
       period: "/year",
-      monthlyEquivalent: "$7.50/month",
+      monthlyEquivalent: "$5.00/month",
       description: "Unlock unlimited stories for your family",
       features: [
         "Unlimited personalized stories",
@@ -25,15 +25,15 @@ export function PricingSection() {
     },
     monthly: {
       name: "Storyland Plus",
-      price: "$9.99",
+      price: "$7.99",
       period: "/month",
       monthlyEquivalent: null,
       description: "Unlock unlimited stories for your family",
       features: [
-        "60 monthly stars",
-        "1 star = 1 minute of storytelling",
-        "Stars never expire",
-        "2 voice clones included",
+        "Unlimited personalized stories",
+        "Unlimited voice clones",
+        "Audio stories & songs",
+        "One family account",
         "5% supports Children Cancer Center of Lebanon",
       ],
     },
@@ -106,9 +106,9 @@ export function PricingSection() {
                 : "text-muted-foreground hover:text-foreground"
                 }`}
             >
-              Yearly
+              Yearly (Best value)
               <span className="ml-1 md:ml-2 px-1.5 md:px-2 py-0.5 bg-amber-400 text-amber-900 text-xs font-bold rounded-full">
-                17% off
+                Save 37%
               </span>
             </button>
             <button
